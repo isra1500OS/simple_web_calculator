@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-app
+  name: calculator
   labels:
-    app: my-app
+    app: calculator
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: my-app
+      app: calculator
   template:
     metadata:
       labels:
-        app: my-app
+        app: calculator
     spec:
       containers:
-      - name: my-app-container
-        image: my-ecr-repo:latest
+      - name: calculator-container
+        image: 897722696887.dkr.ecr.us-west-1.amazonaws.com/project/calculator:latest
         ports:
-        - containerPort: 80
+        - containerPort: 900
